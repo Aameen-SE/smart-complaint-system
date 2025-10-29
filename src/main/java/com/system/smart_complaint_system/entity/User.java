@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -36,8 +37,10 @@ public class User {
 
     private boolean active = true;
 
+    @Column(name = "created_at", columnDefinition = "DATETIME")
     private LocalDateTime createdAt;
 
+    @Column(name = "updated_at", columnDefinition = "DATETIME")
     private LocalDateTime updatedAt;
 
     @PrePersist
